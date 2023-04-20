@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts:": {
+    "prepare": "npm install",
+    "dev": "npm dev",
+    "build": "npm build",
+    "start": "npm start"
+  }
+}
