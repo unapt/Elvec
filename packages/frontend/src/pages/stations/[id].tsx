@@ -22,7 +22,6 @@ import { useEffect, useState } from "react";
 
 import { ScheduleTable } from "./ScheduleTable";
 import { ScheduleProvider } from "./ScheduleContext";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 
 export default function ChargingStations() {
   const router = useRouter();

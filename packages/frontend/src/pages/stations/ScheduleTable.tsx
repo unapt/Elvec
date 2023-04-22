@@ -15,7 +15,7 @@ import { ScheduleContext } from './ScheduleContext';
 import { ScheduleRow } from './ScheduleRow';
 
 export const ScheduleTable = () => {
-    const [schedules, setSchedules] = useContext(ScheduleContext)
+    const [schedules, setSchedules] = useContext<any>(ScheduleContext)
 
     useEffect(() => {
         fetch("http://localhost:8000/schedule/")
@@ -41,7 +41,7 @@ export const ScheduleTable = () => {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    { schedules.data.map(schedule => (
+                    { schedules.data.map((schedule: { id: react.Key | null | undefined; date_time: any; plate_no: any; charging_Duration: any; charge_station: any; }) => (
                         <ScheduleRow
                             id = {schedule.id}
                             date_time = {schedule.date_time}

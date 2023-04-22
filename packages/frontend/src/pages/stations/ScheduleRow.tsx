@@ -12,9 +12,8 @@ import {
 
   import { Button, ButtonGroup } from '@chakra-ui/react'
 
-import react from 'react'
 
-export const ScheduleRow = ({id, date_time, plate_no, charging_Duration, charge_station}) => {
+export const ScheduleRow = ({id, date_time, plate_no, charging_Duration, charge_station}: {id: any, date_time: any, plate_no: any, charging_Duration: any, charge_station: any}) => {
     return (
         <Tr>
             <Td>{id}</Td>
