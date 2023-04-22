@@ -2,7 +2,23 @@ from fastapi import FastAPI
 from tortoise.contrib.fastapi import register_tortoise
 from models import (station_pydantic, station_pydanticIn, Station, schedule_pydantic, schedule_pydanticIn, Schedule)
 
+# adding cors headers
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+
+# adding cors urls
+origins = [
+    'http://localhost:3000'
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins = origins,
+    allow_credentials = True,
+    allow_methods = ["*"],
+    allow_headers = ["*"]
+)
 
 @app.get('/')
 def index():

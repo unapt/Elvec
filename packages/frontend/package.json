@@ -10,15 +10,23 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.0.2",
     "@chakra-ui/react": "^2.2.1",
+    "@chakra-ui/table": "^2.0.17",
     "@chakra-ui/theme-tools": "^2.0.2",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.9.0",
+    "blerg": "^0.0.3",
+    "bootstrap": "^4.6.0",
     "framer-motion": "^6.3.0",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-bootstrap": "^2.7.4",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.53",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",

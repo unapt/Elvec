@@ -21,6 +21,7 @@ import logo from "/public/monkey-logo.jpg";
 import { Chargers } from "../components/Chargers";
 import { Header } from "../components/Header";
 
+
 export default function Index() {
   return (
     <>
@@ -105,6 +106,7 @@ export default function Index() {
           </Center>
         </Stack>
       </Container>
+
     </>
   );
 }
