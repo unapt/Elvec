@@ -10,15 +10,15 @@ import {
     TableContainer,
   } from '@chakra-ui/react'
 
-import react, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { ScheduleContext } from './ScheduleContext';
 import { ScheduleRow } from './ScheduleRow';
 
 export const ScheduleTable = () => {
-    const [schedules, setSchedules] = useContext<any>(ScheduleContext)
+    const [schedules, setSchedules] = useContext(ScheduleContext)
 
     useEffect(() => {
-        fetch("http://localhost:8000/schedule/")
+        fetch("api/schedule")
             .then(resp => {
                 return resp.json();
             }).then(results => {
@@ -41,7 +41,7 @@ export const ScheduleTable = () => {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    { schedules.data.map((schedule: { id: react.Key | null | undefined; date_time: any; plate_no: any; charging_Duration: any; charge_station: any; }) => (
+                    { schedules.data.map((schedule: { id: any; date_time: any; plate_no: any; charging_Duration: any; charge_station: any; }) => (
                         <ScheduleRow
                             id = {schedule.id}
                             date_time = {schedule.date_time}
