@@ -17,7 +17,7 @@ ELVEC is the name of the website that we created. It stands for "Electric Vehicl
 ## What it does
 The website provides a user-friendly interface where users can input their Zip-Code and filter through the available charging stations. Once a charging station is selected, users can reserve it for a specific time slot, which ensures that they have a designated charging spot when they arrive.
 
-## How we Buit it
+## How we Built it
 Technologies Used: React, Next, Chakra, TORTOISE ORM.
 
 We used react for front end as it allows creation of dynamic, responsive, and reusable components. Chakra is a UI library for React that provides pre-built components and styling options, making it easier and faster to create visually appealing user interfaces. TORTOISE ORM is a Python-based Object-Relational Mapping (ORM) library that simplifies database operations and provides an intuitive API for interacting with databases.
