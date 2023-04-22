@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 import {
   Box,
   Heading,
@@ -11,11 +11,11 @@ import {
   createIcon,
   Center,
   Divider,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
-import { Chargers } from '../components/Chargers';
-import { RandomMap } from '../components/RandomMap';
+import { Chargers } from "../components/Chargers";
+import { RandomMap } from "../components/RandomMap";
 
 export default function Index() {
   return (
@@ -27,19 +27,22 @@ export default function Index() {
         />
       </Head>
 
-      <DarkModeSwitch/>
-      <Container maxW={'3xl'}>
+      <DarkModeSwitch />
+      <Container maxW={"3xl"}>
         <Stack
           as={Box}
-          textAlign={'center'}
+          textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
+          py={{ base: 20, md: 36 }}
+        >
           <Heading
             fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}>
-            Electrify your ride. We've got the power to<br />
-            <Text as={'span'} color={'green.400'}>
+            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+            lineHeight={"110%"}
+          >
+            Electrify your ride. We've got the power to
+            <br />
+            <Text as={"span"} color={"green.400"}>
               keep you going
             </Text>
           </Heading>
@@ -48,58 +51,61 @@ export default function Index() {
             random extra text that might be added
           </Text> */}
           <Stack
-            direction={'column'}
+            direction={"column"}
             spacing={3}
-            align={'center'}
-            alignSelf={'center'}
-            position={'relative'}>
+            align={"center"}
+            alignSelf={"center"}
+            position={"relative"}
+          >
             <Button
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
+              colorScheme={"green"}
+              bg={"green.400"}
+              rounded={"full"}
               px={6}
               _hover={{
-                bg: 'green.500',
-              }}>
+                bg: "green.500",
+              }}
+            >
               Get Started
             </Button>
             <Box>
               <Icon
                 as={Arrow}
-                color={useColorModeValue('gray.800', 'gray.300')}
+                color={useColorModeValue("gray.800", "gray.300")}
                 w={71}
-                position={'absolute'}
+                position={"absolute"}
                 right={-71}
-                top={'10px'}
+                top={"10px"}
               />
               <Text
-                fontSize={'lg'}
-                fontFamily={'Caveat'}
-                position={'absolute'}
-                right={'-125px'}
-                top={'-15px'}
-                transform={'rotate(10deg)'}>
+                fontSize={"lg"}
+                fontFamily={"Caveat"}
+                position={"absolute"}
+                right={"-125px"}
+                top={"-15px"}
+                transform={"rotate(10deg)"}
+              >
                 Start saving now!
               </Text>
             </Box>
           </Stack>
         </Stack>
-          <Center height='200px'>
-            <Divider orientation='vertical' />
-          </Center>
-        <Chargers/>
-          <Center height='200px'>
-            <Divider orientation='vertical' />
-          </Center>
-        <RandomMap />
+        <Center height="200px">
+          <Divider orientation="vertical" />
+        </Center>
+        <Chargers />
+        <Center height="200px">
+          <Divider orientation="vertical" />
+        </Center>
+        {/* <RandomMap /> */}
       </Container>
     </>
   );
 }
 
 const Arrow = createIcon({
-  displayName: 'Arrow',
-  viewBox: '0 0 72 24',
+  displayName: "Arrow",
+  viewBox: "0 0 72 24",
   path: (
     <path
       fillRule="evenodd"
