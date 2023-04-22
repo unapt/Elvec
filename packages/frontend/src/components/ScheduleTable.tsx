@@ -18,14 +18,14 @@ export const ScheduleTable = () => {
     const [schedules, setSchedules] = useContext(ScheduleContext)
 
     useEffect(() => {
-        fetch("api/schedule")
+        fetch("http://localhost:8000/schedule")
             .then(resp => {
                 return resp.json();
             }).then(results => {
                 console.log(results)
             setSchedules({"data" : [...results.data]})
         })
-    })
+    }, [])
 
     return (
         <div>
