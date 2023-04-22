@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import styles from "../../components/Cal.module.css"
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import Link from "next/link";
-import { Button, Container, HStack, Heading } from "@chakra-ui/react";
+import { Button, Container, HStack, Heading, Input } from "@chakra-ui/react";
 import { ScheduleTable } from "../../components/ScheduleTable";
 import { ScheduleProvider } from "../../components/ScheduleContext";
 
@@ -35,7 +35,11 @@ export default function Cal() {
     </HStack>
     <HStack>
       <Container>
+        <Heading>
+          Schedule your time now!
+        </Heading>
         <Button>this is where the form will go </Button>
+        <Input placeholder="Plate Number"></Input>
       </Container>
     </HStack>
     </>

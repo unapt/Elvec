@@ -22,12 +22,16 @@ import logo2 from "/public/elvec_logo.png"
 
 import { Chargers } from "../components/Chargers";
 import { Header } from "../components/Header";
+import { RandomMap } from "../components/RandomMap";
+
+import { DarkModeSwitch } from "../components/DarkModeSwitch";
 
 
 export default function Index() {
   return (
     <>
       <Header />
+      <DarkModeSwitch></DarkModeSwitch>
       <Container maxW={"7xl"}>
         <Stack
           align={"center"}
@@ -61,7 +65,7 @@ export default function Index() {
                 }}
                 onClick={() =>
                   window.scrollTo({
-                    top: 1000,
+                    top: 2000,
                     behavior: "smooth",
                   })
                 }
@@ -84,7 +88,7 @@ export default function Index() {
               top={"-20%"}
               left={0}
               zIndex={-1}
-              color={useColorModeValue("red.50", "red.400")}
+              color={useColorModeValue("green.50", "green.400")}
             />
             <Box
               position={"relative"}
@@ -99,13 +103,14 @@ export default function Index() {
           </Flex>
         </Stack>
         <Stack>
-          <Center height="400px">
+          <Center height="100px">
             <Divider orientation="vertical" />
           </Center>
-          <Chargers />
-          <Center height="500px">
+          <RandomMap></RandomMap>
+          <Center height="100px">
             <Divider orientation="vertical" />
           </Center>
+          <Chargers/>
         </Stack>
       </Container>
 
