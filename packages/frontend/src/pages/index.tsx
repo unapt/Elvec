@@ -15,6 +15,7 @@ import {
 
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { Chargers } from '../components/Chargers';
+import { RandomMap } from '../components/RandomMap';
 
 export default function Index() {
   return (
@@ -90,6 +91,7 @@ export default function Index() {
           <Center height='200px'>
             <Divider orientation='vertical' />
           </Center>
+        <RandomMap />
       </Container>
     </>
   );
