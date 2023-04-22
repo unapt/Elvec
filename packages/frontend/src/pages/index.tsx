@@ -19,89 +19,93 @@ import Image from "next/image";
 
 import logo from "/public/monkey-logo.jpg";
 import { Chargers } from "../components/Chargers";
+import { Header } from "../components/Header";
 
 export default function Index() {
   return (
-    <Container maxW={"7xl"}>
-      <Stack
-        align={"center"}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
-        direction={{ base: "column", md: "row" }}
-      >
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-            lineHeight={"110%"}
-          >
-            Electrify your ride. We've got the power to...
-            <br />
-            <Text as={"span"} color={"green.400"}>
-              KEEP YOU GOING!
-            </Text>
-          </Heading>
-          <Stack
-            spacing={{ base: 4, sm: 6 }}
-            direction={{ base: "column", sm: "row" }}
-          >
-            <Button
-              colorScheme={"green"}
-              bg={"green.400"}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: "green.500",
-              }}
-              onClick={() =>
-                window.scrollTo({
-                  top: 1000,
-                  behavior: "smooth",
-                })
-              }
-            >
-              Get Started
-            </Button>
-          </Stack>
-        </Stack>
-        <Flex
-          flex={1}
-          justify={"center"}
+    <>
+      <Header />
+      <Container maxW={"7xl"}>
+        <Stack
           align={"center"}
-          position={"relative"}
-          w={"full"}
+          spacing={{ base: 8, md: 10 }}
+          py={{ base: 20, md: 28 }}
+          direction={{ base: "column", md: "row" }}
         >
-          <Blob
-            w={"100%"}
-            h={"100%"}
-            position={"absolute"}
-            top={"-20%"}
-            left={0}
-            zIndex={-1}
-            color={useColorModeValue("red.50", "red.400")}
-          />
-          <Box
+          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+            <Heading
+              fontWeight={600}
+              fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+              lineHeight={"110%"}
+            >
+              Electrify your ride. We've got the power to...
+              <br />
+              <Text as={"span"} color={"green.400"}>
+                KEEP YOU GOING!
+              </Text>
+            </Heading>
+            <Stack
+              spacing={{ base: 4, sm: 6 }}
+              direction={{ base: "column", sm: "row" }}
+            >
+              <Button
+                colorScheme={"green"}
+                bg={"green.400"}
+                rounded={"full"}
+                px={6}
+                _hover={{
+                  bg: "green.500",
+                }}
+                onClick={() =>
+                  window.scrollTo({
+                    top: 1000,
+                    behavior: "smooth",
+                  })
+                }
+              >
+                Get Started
+              </Button>
+            </Stack>
+          </Stack>
+          <Flex
+            flex={1}
+            justify={"center"}
+            align={"center"}
             position={"relative"}
-            height={"300px"}
-            rounded={"2xl"}
-            boxShadow={"2xl"}
-            width={"300px"}
-            overflow={"hidden"}
+            w={"full"}
           >
-            <Image alt={"logo"} width={"300"} height={"300"} src={logo} />
-          </Box>
-        </Flex>
-      </Stack>
-      <Stack>
-        <Center height="200px">
-          <Divider orientation="vertical" />
-        </Center>
-        <Chargers />
-        <Center height="500px">
-          <Divider orientation="vertical" />
-        </Center>
-      </Stack>
-    </Container>
+            <Blob
+              w={"100%"}
+              h={"100%"}
+              position={"absolute"}
+              top={"-20%"}
+              left={0}
+              zIndex={-1}
+              color={useColorModeValue("red.50", "red.400")}
+            />
+            <Box
+              position={"relative"}
+              height={"300px"}
+              rounded={"2xl"}
+              boxShadow={"2xl"}
+              width={"300px"}
+              overflow={"hidden"}
+            >
+              <Image alt={"logo"} width={"300"} height={"300"} src={logo} />
+            </Box>
+          </Flex>
+        </Stack>
+        <Stack>
+          <Center height="200px">
+            <Divider orientation="vertical" />
+          </Center>
+          <Chargers />
+          <Center height="500px">
+            <Divider orientation="vertical" />
+          </Center>
+        </Stack>
+      </Container>
+    </>
   );
 }
 
