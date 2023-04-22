@@ -14,6 +14,7 @@ import {
   Tag,
   Text,
 } from "@chakra-ui/react";
+
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -21,6 +22,8 @@ import { useEffect, useState } from "react";
 
 import { ScheduleTable } from "./ScheduleTable";
 import { ScheduleProvider } from "./ScheduleContext";
+import { AddSchedules } from "./AddSchedules"
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 export default function ChargingStations() {
   const router = useRouter();
@@ -76,13 +79,16 @@ export default function ChargingStations() {
             </Card>
           ))}
         </SimpleGrid>
-            <ScheduleProvider>
-              <div className = "row">
-                <div className = "col-sm-10 col-xm-12 mr-auto ml-auto mt-4 mb-4">
-                  <ScheduleTable/>            
-                </div>
+        <Route>
+          <ScheduleProvider>
+            <div className = "row">
+              <div className = "col-sm-10 col-xm-12 mr-auto ml-auto mt-4 mb-4">
+                <ScheduleTable/>   
+                <Route path="addSchedule" Component ={AddSchedules} />
               </div>
-            </ScheduleProvider>
+            </div>
+          </ScheduleProvider>
+        </Route>
         <br></br>
         <br></br>
         <br></br>

@@ -7,13 +7,23 @@ import {
     FormControl,
     Input,
     Button,
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
+    Container,
+    HStack,
+    Heading,
+    IconButton,
+    SimpleGrid,
+    Tag,
+    Text,
   } from '@chakra-ui/react'
 
-  const AddSchedules = () => {
+  export const AddSchedules = () => {
 
     const [scheduleInfo, setScheduleInfo] = useState(
         {
-            ScheduleName: "",
             DateTime: "",
             PlateNo: "",
             ChargingDuration: "",
@@ -21,33 +31,71 @@ import {
         }
     )
 
+    const updateForm = (e) => {
+        setScheduleInfo(
+            {...scheduleInfo, [e.target.name] : [e.target.value]}
+        )
+    }
+
+    const postData = async (e) => {
+        e.preventDefault();
+        console.log(scheduleInfo)
+    
+        const url = "http://localhost:8000/schedule/" + scheduleInfo['Station'] 
+
+        const response = await fetch(
+            url, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin', 
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer', 
+                body: JSON.stringify({
+                    "date_time": scheduleInfo['DateTime'],
+                    "plate_no": scheduleInfo['PlateNo'],
+                    "charging_Duration": scheduleInfo['ChargingDuration'],
+                    "charge_station": scheduleInfo['ChargeStation']
+                }) 
+            });
+        response.json().then(response => {
+            if (response.status === 'ok') {
+                alert("Schedule added successfully")
+            } else {
+                alert("Failed to add schedule")
+            }
+        });
+        setScheduleInfo({
+            DateTime: "",
+            PlateNo: "",
+            ChargingDuration: "",
+            ChargeStation: ""
+        });
+    }
+
+
     return (
-                <form onSubmit = {postData}>
-                        <FormLabel>Product Name</FormLabel>
-                        <FormControl type="text" name="ProductName" 
-                            value={productInfo.ProductName} onChange = {updateForm} placeholder="Product Name" />
+        <form onSubmit = {postData}>
+                <FormLabel>Date and Time</FormLabel>
+                <FormControl type="number" name="DateTime"
+                value={scheduleInfo.DateTime} onChange = {updateForm}  placeholder="Date and Time" />
 
-                        <FormLabel>Quantity In Stock</FormLabel>
-                        <FormControl type="number" name="QuantityInStock"
-                        value={productInfo.QuantityInStock} onChange = {updateForm}     placeholder="Quantity In Stock" />
+                <FormLabel>Plate Number</FormLabel>
+                <FormControl type="number" name="PlateNo" value={scheduleInfo.PlateNo} onChange = {updateForm}  placeholder="Plate Number" />
 
-                        <FormLabel>Quantity Sold</FormLabel>
-                        <FormControl type="number" name="QuantitySold" value={productInfo.QuantitySold} onChange = {updateForm}  placeholder="Quantity Sold" />
+                <FormLabel>Charging Duration</FormLabel>
+                <FormControl type="number" name="ChargingDuration" value={scheduleInfo.ChargingDuration} onChange = {updateForm}  placeholder="Charging Duration" />
 
-                        <FormLabel>Unit Price</FormLabel>
-                        <FormControl type="number" name="UnitPrice" value={productInfo.UnitPrice} onChange = {updateForm}  placeholder="Unit Price" />
-
-                        <FormLabel>Revenue</FormLabel>
-                        <FormControl type="number" name="Revenue" value={productInfo.Revenue} onChange = {updateForm}  
-                            placeholder="Revenue" />
-
-                        <FormLabel>Supplier</FormLabel>
-                        <FormControl type="number" name="Supplier" value={productInfo.Supplier} onChange = {updateForm}  
-                            placeholder="Supplier" />
-                    
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
+                <FormLabel>Charging Station</FormLabel>
+                <FormControl type="number" name="ChargeStation" value={scheduleInfo.ChargeStation} onChange = {updateForm}  
+                    placeholder="Charging Station" />
+            
+            <Button variant="primary" type="submit">
+                Submit
+            </Button>
+        </form>
     );
   }
