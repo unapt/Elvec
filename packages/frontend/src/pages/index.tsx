@@ -18,6 +18,8 @@ import {
 import Image from "next/image";
 
 import logo from "/public/monkey-logo.jpg";
+import logo2 from "/public/elvec_logo.png"
+
 import { Chargers } from "../components/Chargers";
 import { Header } from "../components/Header";
 
@@ -85,18 +87,18 @@ export default function Index() {
             />
             <Box
               position={"relative"}
-              height={"300px"}
+              height={"500px"}
               rounded={"2xl"}
               boxShadow={"2xl"}
-              width={"300px"}
+              width={"500px"}
               overflow={"hidden"}
             >
-              <Image alt={"logo"} width={"300"} height={"300"} src={logo} />
+              <Image alt={"logo"} width={"500"} height={"500"} src={logo2} />
             </Box>
           </Flex>
         </Stack>
         <Stack>
-          <Center height="200px">
+          <Center height="400px">
             <Divider orientation="vertical" />
           </Center>
           <Chargers />
