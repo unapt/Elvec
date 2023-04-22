@@ -11,6 +11,7 @@ import {
   IconButton,
   Input,
   SimpleGrid,
+  Tag,
   Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
@@ -61,6 +62,9 @@ export default function ChargingStations() {
               </CardHeader>
               <CardBody>
                 <Text>{stations[i].street_address}</Text>
+                <Tag size="md" variant="solid" colorScheme="green">
+                  {Number(stations[i].distance.toFixed(1))} miles away
+                </Tag>
               </CardBody>
               <CardFooter>
                 <Button>Schedule and Save Now!</Button>
