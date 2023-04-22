@@ -1,7 +1,7 @@
 # Elvec
 ![Electric Vehicle Charing](ELVEC.png)
 
-## Built for Hackhathon By
+## Built for Hackathon By
 
 Muhammad Arham
 Jorge Mancilla
