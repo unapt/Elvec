@@ -110,7 +110,7 @@ export const Chargers = () => {
               </Tag>
             </CardBody>
             <CardFooter>
-              <Button>Schedule and Save Now!</Button>
+              <Button onClick={() => router.push("calendar/" + stations[i].id)}>Schedule and Save Now!</Button>
             </CardFooter>
           </Card>
         ))}
