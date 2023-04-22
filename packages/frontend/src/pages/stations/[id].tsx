@@ -20,8 +20,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 
-import { ScheduleTable } from "./ScheduleTable";
-import { ScheduleProvider } from "./ScheduleContext";
+import { ScheduleTable } from "../../components/ScheduleTable";
+import { ScheduleProvider } from "../../components/ScheduleContext";
 
 export default function ChargingStations() {
   const router = useRouter();
@@ -77,13 +77,6 @@ export default function ChargingStations() {
             </Card>
           ))}
         </SimpleGrid>
-        <ScheduleProvider>
-          <div className = "row">
-            <div className = "col-sm-10 col-xm-12 mr-auto ml-auto mt-4 mb-4">
-              <ScheduleTable/>   
-            </div>
-          </div>
-        </ScheduleProvider>
         <br></br>
         <br></br>
         <br></br>
