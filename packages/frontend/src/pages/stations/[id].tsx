@@ -22,7 +22,6 @@ import { useEffect, useState } from "react";
 
 import { ScheduleTable } from "./ScheduleTable";
 import { ScheduleProvider } from "./ScheduleContext";
-import { AddSchedules } from "./AddSchedules"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 export default function ChargingStations() {
@@ -79,16 +78,13 @@ export default function ChargingStations() {
             </Card>
           ))}
         </SimpleGrid>
-        <Route>
-          <ScheduleProvider>
-            <div className = "row">
-              <div className = "col-sm-10 col-xm-12 mr-auto ml-auto mt-4 mb-4">
-                <ScheduleTable/>   
-                <Route path="addSchedule" Component ={AddSchedules} />
-              </div>
+        <ScheduleProvider>
+          <div className = "row">
+            <div className = "col-sm-10 col-xm-12 mr-auto ml-auto mt-4 mb-4">
+              <ScheduleTable/>   
             </div>
-          </ScheduleProvider>
-        </Route>
+          </div>
+        </ScheduleProvider>
         <br></br>
         <br></br>
         <br></br>
